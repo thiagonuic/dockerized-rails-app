@@ -4,6 +4,8 @@ rvm:
   - 2.5.0
 services:
   - postgresql
+before_install:
+  - gem install bundler -v '1.17.3'
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database auth0app_test;' -U postgres
